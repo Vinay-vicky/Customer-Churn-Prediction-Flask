@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+
+    <!-- Favicons -->
+  <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}">
+
+    <style>
+        .fill-button {
+            text-align: center;
+            margin-top: 120px;
+        }
+        .try-again {
+            margin-top: 25px;
+            margin-bottom: 20px; /* Increased margin-bottom */
+            text-align: center;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-10px);
+            }
+        }
+        .try-again button {
+            color: green;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border: 2px solid green;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            display: inline-block; /* Make the button inline-block to fit the content */
+            margin-top: 10px; /* Adding margin-top to the try-again button */
+            height: 30px; /* Adjusting height */
+            width: 100px; /* Adjusting width */
+            background-color: transparent; /* Making background transparent */
+        }
+        .try-again button:hover {
+            background-color: green;
+            color: white; /* Changing text color to white on hover */
+            text-decoration: none; /* Removing underline on hover */
+        }
+        .try-again button a {
+            text-decoration: none; /* Removing underline */
+            color: inherit; /* Inherit color from parent */
+        }
+        .churn-paragraph{
+            text-align: justify;
+            margin-left: 200px;
+            margin-right: 200px;
+            margin-buttom: 500px;
+            color: #06153f;
+            font-size: 20px;
+        }
+        .btn{
+            margin-top: 150px;
+        }
+    </style>
+</head>
+<body>
+  
+
+    <div class="prediction-container">
+        <h1>Prediction Result</h1>
+        <p class="prediction">Model predicted that Customer is likely to :</p>
+        {% if prediction == 'Churn' %}
+            <h2 style="color: darkred; text-size: 15px;">{{ prediction }}</h2>
+            <p class="prediction">Probability of Customer Churning : {{ predict_probabality }}</p>
+            <p class="churn-paragraph">POSSIBLE CASES :
+                Your customer may not be satisfied by the Phone service,
+                Your customer may not be satisfied by the quality of Internet service or may have received better offers from other companies in the market,
+                Your customer may not have been receiving timely response and the desired solution from the Tech Support Team,
+                Your customer may not find the TV Package satisfactory,
+                Your customer may want better Online backups for movies,
+                Your customer might have found better value for money packages from other companies.</p>
+        {% else %}
+        <h2 style="color: green; text-size: 15px;">{{ prediction }}</h2>
+        <p class="prediction">Probability of Customer Churning : {{ predict_probabality }}</p>
+        <p class="churn-paragraph">Thank him for being a valued customer. Happy customers, happy business. Each customer is unique and valuable, bringing their own needs, wants, and opinions to the table. Happy customers are not only more likely to return and make repeat purchases, but they are also likely to recommend the business to others, spreading the word and bringing in new customers. So maybe you are taking few productive steps in the path of success. Dont just maintain the business of selling goods to the customer, develop a business of serving the customer.</p>
+        {% endif %}
+
+    </div>
+    
+    
+
+    <div class="fill-button">
+        <a href="/logout">
+            <button type="submit" class="btn">Log Out</button>
+        </a>
+    </div>
+
+    <div class="try-again">
+        <button><a href="/index" class="text-success">Try Again?</a></button>
+    </div>
+</body>
+</html>

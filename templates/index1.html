@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CHURN GUARD</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}">
+    <!-- <link rel="apple-touch-icon" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}"> -->
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/remixicon/remixicon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+    
+    <!-- Include your custom CSS if any -->
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+    <style>
+      /* For small devices */
+@media (max-width: 576px) {
+  .col-lg-7 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* For medium devices and above */
+@media (min-width: 768px) {
+  .col-lg-7 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+/* For large devices and above */
+@media (min-width: 992px) {
+  .col-lg-7 {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+}
+
+/* For extra large devices and above */
+@media (min-width: 1200px) {
+  .col-lg-7 {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
+}
+
+/* Additional styles for form fields */
+.form-group {
+  margin-top: 50px;
+
+}
+
+/* Adjusting label width */
+label {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 50px;
+  font-weight: bold;
+  color: #37517e;
+}
+
+/* Adjusting input width */
+input[type="text"] {
+  margin-left: 50px;
+  width: 600px;
+  padding: 8px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Adjusting button styles */
+button[type="submit"] {
+  background-color: #37517e;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 50px;
+  margin-left: 250px;
+}
+
+.another{
+  height: 70000px;
+}
+
+button[type="submit"]:hover {
+  background-color: #47b2e4;
+  color: #fff;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo me-auto"><a href="index1.html">CHURN-GUARD</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Why Us</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <!-- <li><a class="nav-link   scrollto" href="#portfolio">Portfolio</a></li> -->
+          <li><a class="nav-link scrollto" href="#team">About</a></li>
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Drop Down 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Drop Down 2</a></li>
+              <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li>
+            </ul>
+          </li> -->
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="getstarted scrollto" href="/login">Get Started</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Better Solutions For Your Business</h1>
+          <h2>churn guard plays a crucial role in customer churn prediction by enabling businesses to proactively identify and retain valuable customers in the marketplace.</h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            <a href="/login" class="btn-get-started scrollto">Get Started</a>
+            <a href="{{ url_for('static', filename='img/Customer Churn.mp4') }}" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+          </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="{{ url_for('static', filename='img/hero-img.png') }}" class="img-fluid animated" alt="Hero Image">        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Clients Section ======= -->
+    <!-- <section id="clients" class="clients section-bg">
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Cliens Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Why Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6" style="text-align: justify;">
+            <p>
+              At Churn-Guard, we understand the critical importance of retaining telecom customers in today's competitive market. Our cutting-edge predictive analytics platform empowers telecom companies to proactively identify and mitigate customer churn, safeguarding valuable revenue streams and enhancing customer satisfaction.
+            </p>
+            <ul>
+              <li><i class="ri-check-double-line"></i> Our platform leverages advanced machine learning algorithms to analyze vast amounts of customer data and identify patterns indicative of potential churn.</li>
+              <li><i class="ri-check-double-line"></i> Our system doesn't just warn you about customers leaving - it also gives you tips on what to do to keep them. </li>
+              <li><i class="ri-check-double-line"></i> In the fast telecom world, it's important to be better than your competition. With Churn-Guard, you can be ahead by keeping your customers happy and staying in business for a long time.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0" style="text-align: justify;">
+            <p>
+              When it comes to useful business applications of machine learning, it doesn't get much better than customer churn prediction. It's a problem where you usually have a lot of high-quality, fresh data to work with, it's relatively straightforward, and solving it can be a great way to increase profits. Churn rate is a critical metric of customer satisfaction. Low churn rates mean happy customers; high churn rates mean customers are leaving you. A small rate of monthly/quarterly churn compounds over time. 1% monthly churn quickly translates to almost 12% yearly churn. According to Forbes, it takes a lot more money (up to five times more) to get new customers than to keep the ones you already have. Churn tells you how many existing customers are leaving your business, so lowering churn has a big positive impact on your revenue streams.
+            </p>
+            <a href="https://neptune.ai/blog/how-to-implement-customer-churn-prediction" class="btn-learn-more" target="_blank">Learn More</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Why Us Section ======= -->
+    <section id="why-us" class="why-us section-bg">
+      <div class="container-fluid" data-aos="fade-up">
+
+        <div class="row">
+
+          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+            <div class="content">
+              <h3>Step by step procedure to predict the <strong>customer churn</strong></h3>
+              <p>
+                Here's a step-by-step guide for using the Churn-Guard web application for predicting churn possibilities of telecom customers:
+              </p>
+            </div>
+
+            <div class="accordion-list">
+              <ul>
+                <li>
+                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span> Explore Home Page: <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list" style="text-align: justify;">
+                    <p>
+                      Upon opening the website, you'll be directed to the home page. Take a moment to explore any information or features provided on the home page.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span> Get Started (Login): <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list" style="text-align: justify;">
+                    <p>
+                      To access the prediction feature, click on the "Get Started" or "Login" button on the home page.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Login Page: <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list" style="text-align: justify;">
+                    <p>
+                      If you already have an account, enter your username and password to log in. If you're a new user, click on the "Register" link below the login form to create a new account.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-4" class="collapsed"><span>04</span> Register Page: <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-4" class="collapse" data-bs-parent=".accordion-list" style="text-align: justify;">
+                    <p>
+                      If you clicked on the "Register" link, you'll be directed to the registration page. Fill in the required information such as username, email, and password to create a new account. After filling out the registration form, click on the "Register" button to create your account. Once registered, you'll be automatically directed to the login page. After that give your registered details to go predicted page.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-5" class="collapsed"><span>05</span> Prediction Page: <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-5" class="collapse" data-bs-parent=".accordion-list" style="text-align: justify;">
+                    <p>
+                      On the prediction page, you'll see fields where you can enter data related to telecom customers. Input relevant information such as customer demographics, usage patterns, and any other relevant data. Once you've entered all the necessary information, click on the "Submit" button to proceed with the prediction.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-6" class="collapsed"><span>06</span> Result Page: <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-6" class="collapse" data-bs-parent=".accordion-list" style="text-align: justify;">
+                    <p>
+                      After submitting the data, the prediction algorithm will process the information. You'll be redirected to the result page, where you'll see the prediction outcome. The result will indicate the likelihood of customer churn based on the data provided.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-7" class="collapsed"><span>07</span> Try Another Prediction: <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-7" class="collapse" data-bs-parent=".accordion-list" style="text-align: justify;">
+                    <p>
+                      On the result page, you'll have the option to try another prediction with new data. Click on the appropriate button to input new data and initiate another prediction process.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-8" class="collapsed"><span>08</span> Logout: <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <div id="accordion-list-8" class="collapse" data-bs-parent=".accordion-list" style="text-align: justify;">
+                    <p>
+                      If you're done using the Churn-Guard web application, you can log out by clicking on the "Logout" button. Logging out will securely end your session and return you to the home page, where you can start the process again if needed.
+                    </p>
+                  </div>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("{{ url_for("static", filename="img/why-us.png") }}");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>         -->
+          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style="background-image: url('{{ url_for('static', filename='img/why-us.png') }}');" data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+
+        </div>
+
+      </div>
+    </section><!-- End Why Us Section -->
+
+    <!-- ======= Skills Section ======= -->
+    <!-- <section id="skills" class="skills">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+            <img src="assets/img/skills.png" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+            <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
+            <p class="fst-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+
+            <div class="skills-content">
+
+              <div class="progress">
+                <span class="skill">HTML <i class="val">100%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">CSS <i class="val">90%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">JavaScript <i class="val">75%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+              <div class="progress">
+                <span class="skill">Photoshop <i class="val">55%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Skills Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>These services collectively help businesses proactively identify and mitigate customer churn, thereby improving customer retention rates, enhancing customer satisfaction, and maximizing revenue and profitability.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch"  data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4><a href="">Data Preprocessing</a></h4>
+              <p style="text-align:left;">Cleaning and transforming the raw data to address missing values, outliers, and inconsistencies.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4><a href="">Model Evaluation and Validation</a></h4>
+              <p style="text-align:left;">Validating the models on independent datasets or through cross-validation techniques to ensure generalizability</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4><a href="">Risk Segmentation</a></h4>
+              <p style="text-align:left;">Segmenting customers into different risk groups based on their predicted churn probabilities or scores.</p>
+            </div>
+          </div>
+
+          <div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-layer"></i></div>
+              <h4><a href="">Insights and Recommendations</a></h4>
+              <p style="text-align:left;">Analyzing the results of churn prediction to derive actionable insights and recommendations for customer retention efforts.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="row">
+          <div class="col-lg-9 text-center text-lg-start">
+            <h3>Call To Action</h3>
+            <p> If you have any questions or need assistance with our web service, feel free to contact us. We're available to help you with any inquiries or concerns you may have.</p>
+          </div>
+          <div class="col-lg-3 cta-btn-container text-center">
+            <a class="cta-btn align-middle" href="tel:+919361477185">Call To Action</a>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= Portfolio Section ======= -->
+    <!-- <section id="portfolio" class="portfolio">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <li data-filter="*" class="filter-active">All</li>
+          <li data-filter=".filter-app">App</li>
+          <li data-filter=".filter-card">Card</li>
+          <li data-filter=".filter-web">Web</li>
+        </ul>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>App 1</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>App 2</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Card 2</h4>
+              <p>Card</p>
+              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Card 1</h4>
+              <p>Card</p>
+              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Card 3</h4>
+              <p>Card</p>
+              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt=""></div>
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p style="text-align: justify;">I recently achieved a significant milestone by completing a comprehensive web development Course on Coursera, complemented by an intensive e-learning project completed within just 4 months. This endeavor not only solidified my expertise in web development but also honed my ability to effectively manage projects under tight deadlines. Presently, I'm deepening my knowledge and skills in the realm of technology through a rigorous Python full-stack course at SkillVertex. This program offers a holistic approach, equipping me with the necessary tools and frameworks to thrive in the dynamic field of software development. My current focus revolves around a captivating project centered on Customer Churn Prediction and Analysis, leveraging cutting-edge machine learning techniques. This project not only demonstrates my proficiency in data analysis and predictive modeling but also showcases my commitment to solving real-world challenges using innovative solutions. Driven by a passion for innovation and a desire to make a meaningful impact, I am dedicated to continuously learning, growing, and contributing to the ever-evolving landscape of technology. I am excited about the opportunities that lie ahead and look forward to leveraging my skills to drive positive change in the tech industry.</p>
+        </div>
+
+        <div class="row">
+
+          <!-- <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Walter White</h4>
+                <span>Chief Executive Officer</span>
+                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+          <!-- <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>Sarah Jhonson</h4>
+                <span>Product Manager</span>
+                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>William Anderson</h4>
+                <span>CTO</span>
+                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+                <div class="social">
+                  <a href=""><i class="ri-twitter-fill"></i></a>
+                  <a href=""><i class="ri-facebook-fill"></i></a>
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+
+        <center>
+          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="400">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="{{ url_for('static', filename='img/vinay2.jpeg') }}" class="img-fluid" alt=""></div>              <div class="member-info">
+                <h4>Vignesh RV</h4>
+                <span>PG Student</span>
+                <p>im currently now pursuing my master degree at SCSVMV University</p>
+                <div class="social">
+                  <a href="https://wa.link/2tng40"><i class="ri-whatsapp-fill"></i></a>
+                  <a href="https://www.facebook.com/vignesh.velan.52?mibextid=ZbWKwL"><i class="ri-facebook-fill"></i></a>
+                  <a href="https://instagram.com/vinay_vicky.2000"><i class="ri-instagram-fill"></i></a>
+                  <a href="https://www.linkedin.com/in/vignesh-renugambal-b070b8293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"> <i class="ri-linkedin-box-fill"></i> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </center>
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    <!-- <section id="pricing" class="pricing">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Pricing</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="box">
+              <h3>Free Plan</h3>
+              <h4><sup>$</sup>0<span>per month</span></h4>
+              <ul>
+                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
+                <li class="na"><i class="bx bx-x"></i> <span>Pharetra massa massa ultricies</span></li>
+                <li class="na"><i class="bx bx-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
+              </ul>
+              <a href="#" class="buy-btn">Get Started</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+            <div class="box featured">
+              <h3>Business Plan</h3>
+              <h4><sup>$</sup>29<span>per month</span></h4>
+              <ul>
+                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
+                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
+                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+              </ul>
+              <a href="#" class="buy-btn">Get Started</a>
+            </div>
+          </div>
+
+          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
+            <div class="box">
+              <h3>Developer Plan</h3>
+              <h4><sup>$</sup>49<span>per month</span></h4>
+              <ul>
+                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
+                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
+                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
+                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
+                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
+              </ul>
+              <a href="#" class="buy-btn">Get Started</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+    <!-- End Pricing Section -->
+
+    <!-- ======= Frequently Asked Questions Section ======= -->
+    <section id="faq" class="faq section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <p>Explore answers to common queries about Churn-Guard below. If you have a question that isn't addressed here, feel free to reach out to us for further assistance.</p>
+        </div>
+
+        <div class="faq-list">
+          <ul>
+            <li data-aos="fade-up" data-aos-delay="100">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">What is Churn-Guard? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                <p>
+                  Churn-Guard is a customer churn prediction web application designed to help telecom companies forecast which customers are likely to leave their service. By leveraging advanced data analytics and machine learning algorithms, Churn-Guard assists companies in proactively addressing customer churn and implementing targeted retention strategies.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2" class="collapsed">How does Churn-Guard predict customer churn? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  Churn-Guard utilizes historical customer data, such as demographics, usage patterns, and past interactions, to train machine learning models. These models analyze various factors to predict the likelihood of individual customers churning from the telecom service.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="300">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">What information do I need to input into Churn-Guard for churn prediction? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  You will be required to input relevant data about telecom customers, including demographic details (age, gender, location), usage metrics (call duration, data usage), service plan information, customer satisfaction scores, and any other relevant factors that may influence churn.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="400">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">How accurate are the churn predictions generated by Churn-Guard? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  The accuracy of churn predictions generated by Churn-Guard depends on various factors, including the quality and quantity of data provided, the effectiveness of feature engineering, and the performance of the machine learning models.
+                </p>
+              </div>
+            </li>
+
+            <li data-aos="fade-up" data-aos-delay="500">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5" class="collapsed">How can I get started with Churn-Guard? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                  To get started with Churn-Guard, simply visit our website and follow the registration process to create an account. Once logged in, you can begin inputting customer data and leveraging the churn prediction capabilities of the platform to optimize customer retention efforts.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </section><!-- End Frequently Asked Questions Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Need assistance or have inquiries? Don't hesitate to get in touch with us. We're ready to help!</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p> kanchipuram, Tamilnadu, India</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>7777vigneshvelu@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 9361477185</p>
+              </div>
+
+              <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.918774657286!2d79.67440357377181!3d12.783784187514572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52dda41e7594ad%3A0x221aa1eb2271988a!2sAyyangarkulam%20Koot%20Road%20Bus%20Stop!5e0!3m2!1sen!2sin!4v1708748038454!5m2!1sen!2sin' class='map' width="400px" height="300px"></iframe>
+            </div>
+
+          </div>
+
+          <!-- <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="https://formspree.io/f/xdoqyjjw" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div> -->
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <div class="form-group col-md-6">
+          <form action="https://formspree.io/f/xdoqyjjw" method="POST" >
+            <label for="name">Your Name</label>
+            <input type="text" name="name" class="form-control" id="name" required>
+            <label for="name">Your Email</label>
+            <input type="text" name="email" class="form-control" id="name" required>
+            <label for="name">Subject</label>
+            <input type="text" name="subject" class="form-control" id="name" required>
+            <label for="name">Measage</label>
+            <input type="text" name="measage" class="form-control" class="another" id="name" required>
+          <!-- your other form fields go here -->
+          <button type="submit">Send</button>
+        </form>
+        </div>
+        </div>
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <!-- <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <h4>Join Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Arsha</h3>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+            <div class="social-links mt-3">
+              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div> -->
+
+    <div class="container footer-bottom clearfix">
+      <div class="copyright">
+      <center>
+      <h6 style "text-aling: center;">
+        &copy; Copyright 2024 <strong><span>VIGNESH RV</span></strong>. All Rights Reserved
+      </h6>
+      <center>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ url_for('static', filename='vendor/php-email-form/validate.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+</body>
+
+</html>

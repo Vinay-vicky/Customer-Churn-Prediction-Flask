@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 99%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+input[type="submit"] {
+    background-color: #3b5998;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.prediction {
+    font-weight: bold;
+}
+
+.prediction-container {
+    text-align: center;
+}
+
+.center-container {
+    text-align: center;
+}
+
+.fill-button{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.btn {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+}
+.btn {
+    border: 3px solid #f2f2f2;
+    color: #3b5998;
+    border-radius: 20px;
+    padding: 15px 60px; /* Adjusted padding */
+    font-size: 0.8em; /* Adjusted font size */
+}
+
+
+.btn:hover {
+    color: #fff;
+    border-radius: 20px;
+}
+.btn::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+    border-radius: 20px;
+}
+.btn:after {
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #3b5998;
+    border-radius: 20px;
+}
+.btn:hover:after, .btn:active:after {
+    width: 100%;
+    border-radius: 20px;
+}
+
+
+.churn {
+    color: darkred;
+}
+
+.not-churn {
+    color: green;
+}
